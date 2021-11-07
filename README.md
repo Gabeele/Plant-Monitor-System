@@ -1,7 +1,7 @@
 
 <div id="top"></div>
 <div align="center">
-  <a href="https://github.com/Gabeele/Plant-Monitor-System-">
+  <a href="https://github.com/Gabeele/Plant-Monitor-System">
     🌺
   </a>
 
@@ -10,14 +10,14 @@
   <p align="center">
     With the power of an Ardunio Uno, this project focues on managing the enviroment for a potted plant. It is achived through various sensors and devices to water, light, and manage the plant. 
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <!-- <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> 
     <br />
     <br />
     <a href="https://github.com/github_username/repo_name">View Demo</a>
+    · -->
+    <a href="https://github.com/Gabeele/Plant-Monitor-System/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/Gabeele/Plant-Monitor-System/issues">Request Feature</a>
   </p>
 </div>
 
@@ -34,7 +34,7 @@
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">Getting Started (Coming Soon)</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
@@ -42,10 +42,6 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -54,36 +50,29 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+Arduino powered plant monitoring system which utilizes sensors and devices to manage care of a plant. The system will track and analyze the data and react to certain conditions. This includes watering pump when the soil moisture become to low. 
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+This is a side project for me to learn C++, Arduino, and some hardware skills. (Also to keep my plants alive)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [Arduino IDE](https://www.arduino.cc/en/Main/Software_)
+* [C++](https://docs.microsoft.com/en-us/cpp/cpp/?view=msvc-160)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+## Getting Started (Coming Soon)
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+
+<!-- ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
 * npm
@@ -105,7 +94,9 @@ This is an example of how to list things you need to use the software and how to
 4. Enter your API in `config.js`
    ```js
    const API_KEY = 'ENTER YOUR API';
+
    ```
+-->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -114,9 +105,9 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+This projects purpose is to become comfortable with C++, Ardunio, and see real life results from code. 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+It has transformed into a project which might help lots of people who tend to forget about their house plants. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -125,62 +116,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-- [] Feature 1
-- [] Feature 2
-- [] Feature 3
-    - [] Nested Feature
+- [✔️] Tempuature and Humidity Displayed on LCD
+- [✔️] Soil is dry the water pump will turn on until moisture is at acceptable levels
+- [✔️] LED indicators to quickly and easily see status
+- [] Create a case for the system
+- [] Include buttons to manually water
+- [] Fan and lighting controls
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+See the [open issues](https://github.com/Gabeele/Plant-Monitor-System/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
