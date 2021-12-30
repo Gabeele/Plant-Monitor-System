@@ -1,121 +1,80 @@
-#include <dht.h>
-#include <LiquidCrystal.h>
+//Includes
 
+//Conestant pins
 
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-int greenPin = A0;
+const int SOIL_SEN = A0;  //Capacitive soil moutiure sensor
+const int WATER_PUMP = 2;  //Water pump 
 
-#define soilSen A4
-dht sensor;
+  //constants varaibles
+  const int dry_map = 606; // value for dry sensor to map
+  const int wet_map = 284; // value for wet sensor to map
+  const int dry = 0; // value for dry sensor
+  const int wet = 100; // value for wet sensor
+  const int dry_check_val = 15; // Percentage to check wheather the soil is dry
 
-#define waterLevelSig A2
 
 void setup()
 {
 
 
   Serial.begin(9600);
-  lcd.begin(16, 2); //16 by 2 character display
+  pinMode(WATER_PUMP, OUTPUT);
 
-  digitalWrite(13, OUTPUT); //init the Humidity LED
-  digitalWrite(6, OUTPUT); //init the water level LED
-  digitalWrite(7, OUTPUT); //init the soil level LED
-  
-  pinMode(10, OUTPUT);
-
-
-
-
-  delay(1000);
 
 }
 
 void loop()
 {
-
-  sensor.read11(greenPin);
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Humidity = ");
-  lcd.print(sensor.humidity);
-  lcd.setCursor(0, 1);
-  lcd.print("Temp = ");
-  lcd.print(sensor.temperature);
-  delay(1000); //wait a sec (recommended for DHT11)
-
-  int humMax = 55;
-
-  if ((sensor.humidity) > humMax) {
-    digitalWrite(8, HIGH);
-
-  }
-  else {
-
-    digitalWrite(8, LOW);
-  }
-
-  delay(3000); //wait a sec (recommended for DHT11
-
-
-  int waterLevelValue = analogRead(waterLevelSig);
-
-  lcd.clear();
-  lcd.setCursor(0, 0);
-  lcd.print("Water = ");
-
-  if (waterLevelValue > 100) {
-    digitalWrite(6, HIGH);
-    lcd.print("Ok");
-
-  } else {
-    digitalWrite(6, LOW);
-    lcd.print("Low");
-  }
-
-
-  const int drySoil = 606;
-  const int wetSoil = 284;
-
-  int soilSenValue = analogRead(soilSen);
-
-  Serial.print(soilSenValue);
-  Serial.print("\n");
-
-  int perSoilSen = map(soilSenValue, wetSoil, drySoil, 100, 0);
-
-  lcd.setCursor(0, 1);
-  lcd.print("Soil = ");
-  lcd.print(perSoilSen);
-  lcd.print("%");
-
-  while (perSoilSen < 10) {
-    digitalWrite(7, HIGH);
-    digitalWrite(10, HIGH);
-    int soilSenValue = analogRead(soilSen);
-    int perSoilSen = map(soilSenValue, wetSoil, drySoil, 100, 0);
+  int soil_moist = getSoilMoisture();
   
-    lcd.clear();
-    delay(500);
-    lcd.setCursor(0, 0);
-    lcd.print("     ALERT!     ");
-    lcd.setCursor(0, 1);
-    lcd.print("Soil = ");
-    lcd.print(perSoilSen);
-    lcd.print("%");
+  bool isDry = getSoilStatus(soil_moist);
 
+  displayAsPercentage(soil_moist);
 
-    if (perSoilSen > 80) {
-      digitalWrite(7, LOW);
-      digitalWrite(10, LOW);
-      break;
-    }
-
-    delay(500);
-
-
+  
+  if(isDry){
+    //turnPumpOn();
+  }else{
+    //turnPumpOff();
   }
+  
+  delay(2000);
+  
+}
 
-  delay(3000); //wait a sec (recommended for DHT11)
+int getSoilMoisture(){
 
+    int soil_sen_value = analogRead(SOIL_SEN);
+    int percentageHumididy = map(soil_sen_value, wet_map, dry_map, wet, dry); 
+    
+  return percentageHumididy;
+}
+
+bool getSoilStatus(int soil_moist){
+
+  if (soil_moist <= dry_check_val){
+    return true;
+  }
+  else if (soil_moist > dry_check_val){
+    return false;
+  }
+  else{
+    return false;
+  }
+  
+}
+
+void turnPumpOff(){
+  digitalWrite(WATER_PUMP, LOW);
+}
+
+void turnPumpOn(){
+  digitalWrite(WATER_PUMP, HIGH);
+}
+
+void displayAsPercentage(int value){
+
+  Serial.print(value);
+  Serial.println("%");
 
 }
