@@ -119,6 +119,7 @@ It has transformed into a project which might help lots of people who tend to fo
 - [✔️] Tempuature and Humidity Displayed on LCD
 - [✔️] Soil is dry the water pump will turn on until moisture is at acceptable levels
 - [✔️] LED indicators to quickly and easily see status
+- [] Button to change the dryness threshold
 - [] Create a case for the system
 - [] Include buttons to manually water
 - [] Fan and lighting controls
